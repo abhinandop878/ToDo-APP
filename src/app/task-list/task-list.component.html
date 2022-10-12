@@ -13,7 +13,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let i of toDoData">
+                  <tr *ngFor="let i of to.todos">
                     <td>{{i.id}}</td>
                     <td>{{i.todo}}</td>
                     <td *ngIf="i.completed"><div class="alert alert-success" role="alert">

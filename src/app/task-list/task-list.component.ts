@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-task-list',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
-  constructor() { }
-
-  toDodata={}
+  constructor(private myapi:ApiService) { 
+    this.fetchData()
+  }
+  fetchData=()=>{
+    this.myapi.viewTask().subscribe((data)=>{
+      this.to=data
+    })
+  }
   ngOnInit(): void {
   }
+to:any={}
 
 }
